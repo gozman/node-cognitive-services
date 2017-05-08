@@ -11,14 +11,14 @@ const face = ({
 
     /**
 			Name: Face: Detect
-			Description: Detect human faces in an image and returns face locations, and optionally with face ID, landmarks, and attributes. 
+			Description: Detect human faces in an image and returns face locations, and optionally with face ID, landmarks, and attributes.
 
   <ul>
-  <li>Optional parameters for returning face ID, landmarks, and attributes. Attributes include age, gender, smile intensity, 
-  facial hair and head-pose. Face ID is for other APIs use including 
-  <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239">Face - Identify</a>, 
-  <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a">Face - Verify</a>, and 
-  <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237">Face - Find Similar</a>. 
+  <li>Optional parameters for returning face ID, landmarks, and attributes. Attributes include age, gender, smile intensity,
+  facial hair and head-pose. Face ID is for other APIs use including
+  <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239">Face - Identify</a>,
+  <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a">Face - Verify</a>, and
+  <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237">Face - Find Similar</a>.
   The face ID will expire in 24 hours after detection call.</li>
   <ul>
   <li>JPEG, PNG, GIF(the first frame), and BMP are supported. The image file size should be no larger than 4MB.</li>
@@ -43,7 +43,7 @@ const face = ({
         const operation = {
             "name": "Detect",
             "path": "face/v1.0/detect",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "POST",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -58,7 +58,7 @@ const face = ({
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "returnFaceId",
@@ -104,7 +104,7 @@ const face = ({
     };
     /**
 			Name: Face: Find Similar
-			Description: 
+			Description:
   Find similar - looking faces for a query face from a list of candidate faces (given by a face list or a face ID array) and return similar face IDs ranked by similarity.
   The candidate face list has a limitation of 1000 faces.
   <h4>Http Method</h4>
@@ -120,7 +120,7 @@ const face = ({
         const operation = {
             "name": "Find Similar",
             "path": "face/v1.0/findsimilars",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "POST",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -155,7 +155,7 @@ const face = ({
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": []
         };
@@ -171,7 +171,7 @@ const face = ({
     };
     /**
 			Name: Face: Group
-			Description: 
+			Description:
   Divide candidate faces into groups based on face similarity.
   <br/>
   <ul>
@@ -196,7 +196,7 @@ const face = ({
         const operation = {
             "name": "Group",
             "path": "face/v1.0/group",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "POST",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -211,7 +211,7 @@ const face = ({
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": []
         };
@@ -227,7 +227,7 @@ const face = ({
     };
     /**
 			Name: Face: Identify
-			Description: 
+			Description:
   Identify unknown faces from an person group.
   <br/><br/>
   For each face in the faceIds array,
@@ -256,7 +256,7 @@ const face = ({
         const operation = {
             "name": "Identify",
             "path": "face/v1.0/identify",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "POST",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -279,7 +279,7 @@ const face = ({
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": []
         };
@@ -295,7 +295,7 @@ const face = ({
     };
     /**
 			Name: Face: Verify
-			Description: 
+			Description:
   Verify whether two faces belong to a same person.
   <br/><br/>
   Remarks:
@@ -316,7 +316,7 @@ const face = ({
         const operation = {
             "name": "Verify",
             "path": "face/v1.0/verify",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "POST",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -335,7 +335,7 @@ const face = ({
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": []
         };
@@ -355,16 +355,16 @@ const face = ({
         It returns an persistedFaceId representing the added face, and persistedFaceId will not expire.
         <ul>
 <li>The persistedFaceId will be used in output JSON of
-        <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237">Face - Find Similar</a>, 
+        <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237">Face - Find Similar</a>,
   or in <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395251">Face List - Delete a Face from a Face List</a> to remove face from a face list.</li>
 <li>JPEG, PNG, GIF(the first frame), and BMP are supported. The image file size should be no larger than 4MB.</li>
 <li>The detectable face size is between 36x36 to 4096x4096 pixels. The faces out of this range will not be detected.</li>
-<li>Rectangle specified by targetFace should contain exactly one face. Zero or multiple faces will be regarded as an error. Out of detectable face size, large head-pose, or very large occlusions will also result in fail to add a person face.</li> 
-<li>The given rectangle specifies both face location and face size at the same time. There is no guarantee of corrent result if you are using rectangle which are not returned from <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">Face - Detect</a>.  </li> 
+<li>Rectangle specified by targetFace should contain exactly one face. Zero or multiple faces will be regarded as an error. Out of detectable face size, large head-pose, or very large occlusions will also result in fail to add a person face.</li>
+<li>The given rectangle specifies both face location and face size at the same time. There is no guarantee of corrent result if you are using rectangle which are not returned from <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">Face - Detect</a>.  </li>
 </ul>
 <p>
-Face list is a group of faces, and these faces will not expire. Face list is used as a parameter of source faces in 
-  <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237">Face - Find Similar</a>. 
+Face list is a group of faces, and these faces will not expire. Face list is used as a parameter of source faces in
+  <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237">Face - Find Similar</a>.
   Face List is useful when to find similar faces in a fixed face set very often, e.g. to find a similar face in a face list of celebrities, friends, or family members.</p>
         <p>
   A face list can have a maximum of 1000 faces.
@@ -385,7 +385,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
         const operation = {
             "name": "Add a Face to a Face List",
             "path": "face/v1.0/facelists/{faceListId}/persistedFaces",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "POST",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -400,7 +400,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "faceListId",
@@ -440,11 +440,11 @@ Face list is a group of faces, and these faces will not expire. Face list is use
     };
     /**
 			Name: Face: Create a Face List
-			Description: 
+			Description:
         <p>Create an empty face list with user-specified face list ID, name and an optional user-data. 64 face lists are allowed to exist in one subscription.</p>
 <p>
-Face list is a group of faces, and these faces will not expire. Face list is used as a parameter of source faces in 
-  <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237">Face - Find Similar</a>. 
+Face list is a group of faces, and these faces will not expire. Face list is used as a parameter of source faces in
+  <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237">Face - Find Similar</a>.
   Face List is useful when to find similar faces in a fixed face set very often, e.g. to find a similar face in a face list of celebrities, friends, or family members.
 </p>
 <p>A face list can have a maximum of 1000 faces.</p>
@@ -463,7 +463,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
         const operation = {
             "name": "Create a Face List",
             "path": "face/v1.0/facelists/{faceListId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "PUT",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -482,7 +482,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "faceListId",
@@ -506,7 +506,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
     };
     /**
 			Name: Face: Delete a Face from a Face List
-			Description: 
+			Description:
   Delete an existing face from a face list (given by a face ID and a face list ID). Persisted image related to the face will also be deleted.
   <h4>Http Method</h4>
   DELETE
@@ -524,7 +524,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
         const operation = {
             "name": "Delete a Face from a Face List",
             "path": "face/v1.0/facelists/{faceListId}/persistedFaces/{persistedFaceId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "DELETE",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -533,7 +533,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
             "description": "\n	Delete an existing face from a face list (given by a face ID and a face list ID). Persisted image related to the face will also be deleted.\n	<h4>Http Method</h4>\n	DELETE\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "faceListId",
@@ -565,7 +565,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
     };
     /**
 			Name: Face: Delete a Face List
-			Description: 
+			Description:
   Delete an existing face list according to face list ID. Persisted face images in the face list will also be deleted.
   <h4>Http Method</h4>
   DELETE
@@ -582,7 +582,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
         const operation = {
             "name": "Delete a Face List",
             "path": "face/v1.0/facelists/{faceListId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "DELETE",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -591,7 +591,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
             "description": "\n	Delete an existing face list according to face list ID. Persisted face images in the face list will also be deleted.\n	<h4>Http Method</h4>\n	DELETE\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "faceListId",
@@ -615,7 +615,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
     };
     /**
 			Name: Face: Get a Face List
-			Description: 
+			Description:
   Retrieve a face list's information, including face list ID, name, userData and faces in the face list. Face list simply represents a list of faces, and could be treated as a searchable data source in
   <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237">Face - Find Similar</a>.
   <h4>Http Method</h4>
@@ -632,7 +632,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
         const operation = {
             "name": "Get a Face List",
             "path": "face/v1.0/facelists/{faceListId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "GET",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -641,7 +641,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
             "description": "\n	Retrieve a face list's information, including face list ID, name, userData and faces in the face list. Face list simply represents a list of faces, and could be treated as a searchable data source in\n	<a href=\"/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237\">Face - Find Similar</a>.\n	<h4>Http Method</h4>\n	GET\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "faceListId",
@@ -665,7 +665,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
     };
     /**
 			Name: Face: List Face Lists
-			Description: 
+			Description:
   Retrieve information about all existing face lists. Only face list ID, name and user data will be returned. Try <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524c">Face List - Get a Face List</a> to retrieve face information inside faceList.
   <h4>Http Method</h4>
   GET
@@ -679,7 +679,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
         const operation = {
             "name": "List Face Lists",
             "path": "face/v1.0/facelists",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "GET",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -688,7 +688,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
             "description": "\n	Retrieve information about all existing face lists. Only face list ID, name and user data will be returned. Try <a href=\"/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524c\">Face List - Get a Face List</a> to retrieve face information inside faceList.\n	<h4>Http Method</h4>\n	GET\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": []
         };
@@ -704,7 +704,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
     };
     /**
 			Name: Face: Update a Face List
-			Description: 
+			Description:
   Update face changes to a face list. Face list simply represents a list of faces, and could be treat as a searchable data source in
   <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237">Face - Find Similar</a>.
   <h4>Http Method</h4>
@@ -722,7 +722,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
         const operation = {
             "name": "Update a Face List",
             "path": "face/v1.0/facelists/{faceListId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "PATCH",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -741,7 +741,7 @@ Face list is a group of faces, and these faces will not expire. Face list is use
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "faceListId",
@@ -770,13 +770,13 @@ Face list is a group of faces, and these faces will not expire. Face list is use
 <ul>
 <li>The persistedFaceId is only used in
         <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239">Face - Identify</a>
-and 
+and
 <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523e">Person - Delete a Person Face</a></li>
 <li>Each person has a maximum of 248 faces.</li>
 <li>JPEG, PNG, GIF(the first frame), and BMP are supported. The image file size should be no larger than 4MB.</li>
 <li>The detectable face size is between 36x36 to 4096x4096 pixels. The faces out of this range will not be detected.</li>
-<li>Rectangle specified by targetFace should contain exactly one face. Zero or multiple faces will be regarded as an error. Out of detectable face size, large head-pose, or very large occlusions will also result in fail to add a person face.</li> 
-<li>The given rectangle specifies both face location and face size at the same time. There is no guarantee of corrent result if you are using rectangle which are not returned from <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">Face - Detect</a>.  </li> 
+<li>Rectangle specified by targetFace should contain exactly one face. Zero or multiple faces will be regarded as an error. Out of detectable face size, large head-pose, or very large occlusions will also result in fail to add a person face.</li>
+<li>The given rectangle specifies both face location and face size at the same time. There is no guarantee of corrent result if you are using rectangle which are not returned from <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">Face - Detect</a>.  </li>
 </ul>
   <h4>Http Method</h4>
   POST
@@ -796,7 +796,7 @@ and
         const operation = {
             "name": "Add a Person Face",
             "path": "face/v1.0/persongroups/{personGroupId}/persons/{personId}/persistedFaces",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "POST",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -811,7 +811,7 @@ and
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -859,10 +859,10 @@ and
     };
     /**
 			Name: Face: Create a Person
-			Description: 
+			Description:
   Create a new person in a specified person group for identify. A newly created person have no registered face, you can call Person - Add a Person Face API to add faces to the person.
   <br/><br/>
-  The number of persons has a subscription limit. For free subscription, the limit is 1000. 
+  The number of persons has a subscription limit. For free subscription, the limit is 1000.
   <h4>Http Method</h4>
   POST
 
@@ -878,7 +878,7 @@ and
         const operation = {
             "name": "Create a Person",
             "path": "face/v1.0/persongroups/{personGroupId}/persons",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "POST",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -897,7 +897,7 @@ and
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -921,7 +921,7 @@ and
     };
     /**
 			Name: Face: Delete a Person
-			Description: 
+			Description:
   Delete an existing person from a person group. Persisted face images of the person will also be deleted.
   <h4>Http Method</h4>
   DELETE
@@ -939,7 +939,7 @@ and
         const operation = {
             "name": "Delete a Person",
             "path": "face/v1.0/persongroups/{personGroupId}/persons/{personId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "DELETE",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -948,7 +948,7 @@ and
             "description": "\n	Delete an existing person from a person group. Persisted face images of the person will also be deleted.\n	<h4>Http Method</h4>\n	DELETE\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -980,7 +980,7 @@ and
     };
     /**
 			Name: Face: Delete a Person Face
-			Description: 
+			Description:
   Delete a face from a person. Relative image for the persisted face will also be deleted.
   <h4>Http Method</h4>
   DELETE
@@ -999,7 +999,7 @@ and
         const operation = {
             "name": "Delete a Person Face",
             "path": "face/v1.0/persongroups/{personGroupId}/persons/{personId}/persistedFaces/{persistedFaceId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "DELETE",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1008,7 +1008,7 @@ and
             "description": "\n	Delete a face from a person. Relative image for the persisted face will also be deleted.\n	<h4>Http Method</h4>\n	DELETE\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -1048,7 +1048,7 @@ and
     };
     /**
 			Name: Face: Get a Person
-			Description: 
+			Description:
   Retrieve a person's information, including registered faces, name and userData.
   <h4>Http Method</h4>
   GET
@@ -1065,7 +1065,7 @@ and
         const operation = {
             "name": "Get a Person",
             "path": "face/v1.0/persongroups/{personGroupId}/persons/{personId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "GET",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1074,7 +1074,7 @@ and
             "description": "\n	Retrieve a person's information, including registered faces, name and userData.\n	<h4>Http Method</h4>\n	GET\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -1106,7 +1106,7 @@ and
     };
     /**
 			Name: Face: Get a Person Face
-			Description: 
+			Description:
   Retrieve information about a face (specified by face ID, person ID and its belonging person group ID).
   <h4>Http Method</h4>
   GET
@@ -1124,7 +1124,7 @@ and
         const operation = {
             "name": "Get a Person Face",
             "path": "face/v1.0/persongroups/{personGroupId}/persons/{personId}/persistedFaces/{persistedFaceId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "GET",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1133,7 +1133,7 @@ and
             "description": "\n	Retrieve information about a face (specified by face ID, person ID and its belonging person group ID).\n	<h4>Http Method</h4>\n	GET\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -1173,7 +1173,7 @@ and
     };
     /**
 			Name: Face: List Persons in a Person Group
-			Description: 
+			Description:
   List all people in a person group, and retrieve person information (including person ID, name, user data and registered faces of the person).
   <h4>Http Method</h4>
   GET
@@ -1189,7 +1189,7 @@ and
         const operation = {
             "name": "List Persons in a Person Group",
             "path": "face/v1.0/persongroups/{personGroupId}/persons",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "GET",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1198,7 +1198,7 @@ and
             "description": "\n	List all people in a person group, and retrieve person information (including person ID, name, user data and registered faces of the person).\n	<h4>Http Method</h4>\n	GET\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -1222,7 +1222,7 @@ and
     };
     /**
 			Name: Face: Update a Person
-			Description: 
+			Description:
   Update a person's name or userData field.
   <h4>Http Method</h4>
   PATCH
@@ -1240,7 +1240,7 @@ and
         const operation = {
             "name": "Update a Person",
             "path": "face/v1.0/persongroups/{personGroupId}/persons/{personId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "PATCH",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1259,7 +1259,7 @@ and
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -1291,7 +1291,7 @@ and
     };
     /**
 			Name: Face: Update a Person Face
-			Description: 
+			Description:
   Update a person face's userData field.
   <h4>Http Method</h4>
   PATCH
@@ -1310,7 +1310,7 @@ and
         const operation = {
             "name": "Update a Person Face",
             "path": "face/v1.0/persongroups/{personGroupId}/persons/{personId}/persistedFaces/{persistedFaceId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "PATCH",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1325,7 +1325,7 @@ and
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -1365,7 +1365,7 @@ and
     };
     /**
 			Name: Face: Create a Person Group
-			Description: 
+			Description:
   Create a new person group with specified person group ID, name and user-provided data.
   <br/><br/>
   A person group is one of the most important parameters for the <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239">Face - Identify</a> API. The Identify
@@ -1385,7 +1385,7 @@ and
         const operation = {
             "name": "Create a Person Group",
             "path": "face/v1.0/persongroups/{personGroupId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "PUT",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1404,7 +1404,7 @@ and
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -1428,7 +1428,7 @@ and
     };
     /**
 			Name: Face: Delete a Person Group
-			Description: 
+			Description:
   Delete an existing person group. Persisted face images of all people in the person group will also be deleted.
   <h4>Http Method</h4>
   DELETE
@@ -1445,7 +1445,7 @@ and
         const operation = {
             "name": "Delete a Person Group",
             "path": "face/v1.0/persongroups/{personGroupId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "DELETE",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1454,7 +1454,7 @@ and
             "description": "\n	Delete an existing person group. Persisted face images of all people in the person group will also be deleted.\n	<h4>Http Method</h4>\n	DELETE\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -1478,7 +1478,7 @@ and
     };
     /**
 			Name: Face: Get a Person Group
-			Description: 
+			Description:
   Retrieve the information of a person group, including its name and userData. This API returns person group information only, use <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395241">Person - List Persons in a Person Group</a> instead to retrieve person information under the person group.
   <h4>Http Method</h4>
   GET
@@ -1494,7 +1494,7 @@ and
         const operation = {
             "name": "Get a Person Group",
             "path": "face/v1.0/persongroups/{personGroupId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "GET",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1503,7 +1503,7 @@ and
             "description": "\n	Retrieve the information of a person group, including its name and userData. This API returns person group information only, use <a href=\"/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395241\">Person - List Persons in a Person Group</a> instead to retrieve person information under the person group.\n	<h4>Http Method</h4>\n	GET\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -1527,7 +1527,7 @@ and
     };
     /**
 			Name: Face: Get Person Group Training Status
-			Description: 
+			Description:
   Retrieve the training status of a person group (completed or ongoing). Training can be triggered by the <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249">Person Group - Train Person Group</a> API. The training will process for a while on the server side..
   <h4>Http Method</h4>
   GET
@@ -1543,7 +1543,7 @@ and
         const operation = {
             "name": "Get Person Group Training Status",
             "path": "face/v1.0/persongroups/{personGroupId}/training",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "GET",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1552,7 +1552,7 @@ and
             "description": "\n	Retrieve the training status of a person group (completed or ongoing). Training can be triggered by the <a href=\"/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249\">Person Group - Train Person Group</a> API. The training will process for a while on the server side..\n	<h4>Http Method</h4>\n	GET\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -1576,7 +1576,7 @@ and
     };
     /**
 			Name: Face: List Person Groups
-			Description: 
+			Description:
   List all person groups and their information.
   <h4>Http Method</h4>
   GET
@@ -1590,7 +1590,7 @@ and
         const operation = {
             "name": "List Person Groups",
             "path": "face/v1.0/persongroups",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "GET",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1599,7 +1599,7 @@ and
             "description": "\n	List all person groups and their information.\n	<h4>Http Method</h4>\n	GET\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": []
         };
@@ -1615,7 +1615,7 @@ and
     };
     /**
 			Name: Face: Train Person Group
-			Description: 
+			Description:
   Queue a person group training task, the training task may not be started immediately.
   <br/><br/>
   Any updates to person group will not take effect in <a href="/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239">Face - Identify</a> until person group is successfully trained.
@@ -1635,7 +1635,7 @@ and
         const operation = {
             "name": "Train Person Group",
             "path": "face/v1.0/persongroups/{personGroupId}/train",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "POST",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1644,7 +1644,7 @@ and
             "description": "\n	Queue a person group training task, the training task may not be started immediately.\n	<br/><br/>\n	Any updates to person group will not take effect in <a href=\"/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239\">Face - Identify</a> until person group is successfully trained.\n	You can query the training status by calling <a href=\"/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395247\">Person Group - Get Person Group Training Status</a> API.\n	<h4>Http Method</h4>\n	POST\n",
             "serviceName": "Face",
             "headers": {
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
@@ -1668,7 +1668,7 @@ and
     };
     /**
 			Name: Face: Update a Person Group
-			Description: 
+			Description:
   Update an existing person group's display name and userData. The properties which does not appear in request body will not be updated.
   <h4>Http Method</h4>
   PATCH
@@ -1685,7 +1685,7 @@ and
         const operation = {
             "name": "Update a Person Group",
             "path": "face/v1.0/persongroups/{personGroupId}",
-            "host": "api.projectoxford.ai",
+            "host": "westus.api.cognitive.microsoft.com",
             "method": "PATCH",
             "scheme": "https",
             "serviceId": "563879b61984550e40cbbe8d",
@@ -1704,7 +1704,7 @@ and
             }],
             "headers": {
                 "Content-Type": "application/json",
-                "Host": "api.projectoxford.ai"
+                "Host": "westus.api.cognitive.microsoft.com"
             },
             "parameters": [{
                 "name": "personGroupId",
